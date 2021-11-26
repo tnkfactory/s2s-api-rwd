@@ -1,10 +1,3 @@
-<style>
-  code {
-    white-space : pre-wrap !important;
-    word-break: break-word;
-  }
-</style>
-
 # TnkAd Integration Guide
 
 ### (외부 매체 연동 가이드)
