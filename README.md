@@ -196,7 +196,7 @@ http://api3.tnkfactory.com/tnk/ad.icon.main?app\_id=105
 ``` 
 https://api3.tnkfactory.com/tnk/ad.queryjoin.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123
 ```
-```
+``` json
 {"ret_cd":"S", "actn_id":2, "actn_desc":"롯데체크카드를 신청합니다.(포인트는 자동 지급됩니다.)", "app_desc":"- 본 이벤트는 만 18세 이상 롯데카드 신규 회원님만 1일 1회 참여 가능합니다.\r\n- 롯데닷컴 최고 5% 할인\r\n- 롯데포인트 최고 10% 적립\r\n- 연회비 면체 및 SMS 무료\r\n- 롯데리아 할인",”dev\_nm”:”롯데”}
 ```
 
