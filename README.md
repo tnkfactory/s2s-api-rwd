@@ -1,4 +1,4 @@
-# nkAd Integration Guide
+# TnkAd Integration Guide
 
 ### (외부 매체 연동 가이드)
 
