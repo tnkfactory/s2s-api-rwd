@@ -1,10 +1,10 @@
-#TnkAd Integration Guide
+# nkAd Integration Guide
 
-###(외부 매체 연동 가이드)
+### (외부 매체 연동 가이드)
 
-###V 5.1
+### V 5.1
 
-###[http://www.tnkfactory.com](http://www.tnkfactory.com/)
+### [http://www.tnkfactory.com](http://www.tnkfactory.com/)
 
 
 \- 변경사항
