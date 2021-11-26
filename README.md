@@ -138,12 +138,16 @@ http://api3.tnkfactory.com/tnk/ad.offerlist.main
 
 
 - 호출 예시
+~~~
 `
 https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123&orientation=3
 `
-` json
+~~~
+~~~ json
+`
 {"ret_cd":"S", "list":[{"app_id":26433,"actn_id":2,"app_rate":0,"pnt_amt":220,"bid_amt":0,"app_pkg":"com.pizzahut.android","app_nm":"피자헛_200214","corp_desc":"1","actn_desc":"1","dev_nm":"피자헛","from_dt":"19700101","to_dt":"29991231","cat_id":"LF","os_type":"W","free_yn":"Y","pnt_unit":"코인""adv_amt":300,”cmpn_type”:402},{"app_id":26415,"actn_id":2,"app_rate":0,"pnt_amt":5200,"bid_amt":0,"app_pkg":"com.gsretail.android.smapp","app_nm":"GS fresh / 심플리쿡_카카오커머스","corp_desc":"GS fresh / 심플리쿡_카카오커머스","actn_desc":"1","dev_nm":"GS프레시","from_dt":"20200218","to_dt":"20200229","cat_id":"SH","os_type":"A","free_yn":"Y","pnt_unit":"코인""adv_amt":7000,"cmpn_type":103},{"app_id":20429,"actn_id":2,"app_rate":0,"pnt_amt":430,"bid_amt":0,"app_pkg":"com.tmon","app_nm":"타임커머스 티몬 (회원가입, 상세설명 참조)","corp_desc":"티몬에선 매일매일이 쇼핑타이밍!","actn_desc":"티몬 신규 회원가입을 완료하세요 (최초 설치 유저만 10분내 보상이 지급됩니다.)","dev_nm":"티몬","from_dt":"20200201","to_dt":"20200229","cat_id":"ET","os_type":"A","free_yn":"Y","pnt_unit":"코인""adv_amt":574,”cmpn_type”:201},{"app_id":24078,"actn_id":1,"app_rate":0,"pnt_amt":150,"bid_amt":0,"app_pkg":"kr.co.beautynet.missha","app_nm":"미샤 (최초실행)","corp_desc":"최초 실행유저만 5분 이내보상을 받을 수 있습니다.","actn_desc":"앱을 설치 후 실행해주세요.","dev_nm":"ABLE C&C CO., LTD","from_dt":"20200201","to_dt":"20200229","cat_id":"SH","os_type":"A","free_yn":"Y","pnt_unit":"코인""adv_amt":202,”cmpn_type”:102},...|
 `
+~~~
 
 1. **이미지 URL**
 
