@@ -166,7 +166,7 @@ http://api3.tnkfactory.com/tnk/ad.icon.main
 
 - 호출 예시
 ```
-http://api3.tnkfactory.com/tnk/ad.icon.main?app\_id=105
+http://api3.tnkfactory.com/tnk/ad.icon.main?app_id=105
 ```
 
 1. **queryJoin**
