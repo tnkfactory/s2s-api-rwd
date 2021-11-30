@@ -61,14 +61,14 @@ TnkAd의 플랫폼과 외부 매체사와의 연동을 위한 가이드이다. T
 
 
 
-1. **상세 연동 절차**
-   1. **연동 공통 사항**
+2. **상세 연동 절차**
+  2.1. **연동 공통 사항**
 - 연동을 위하여 Tnk 사이트에서 앱 등록이 선행되어야한다.
 - 외부 매체사는 광고 참여를 위하여 최소한 requestJoin API를 호출해야하며, 설치형은 reqeustReward API를 사용하여 적립요청을 해야한다.
 - Tnkad 서버로부터 적립 결과를 전달 받기 위한 URL을 제공해야한다.
 - 연동 방식은 HTTP의 POST 이다.
 - 연동 결과는 JSON 문자열로 반환된다.
-  1. **연동 매체 설정**
+  2.2. **연동 매체 설정**
 
 외부 매체의 경우에도 다른 Tnk 매체와 동일하게 Tnk 사이트에 회원 가입후 게시앱 정보를 등록한다.
 
@@ -79,7 +79,7 @@ TnkAd의 플랫폼과 외부 매체사와의 연동을 위한 가이드이다. T
 앱 등록은 OS 별로 등록되어야 한다. (만약 기존에 하나의 앱을 등록하여 Android와 iOS 공통으로 사용하였다면 반드시 분리하여 등록해야 한다.)
 
 
-1. **광고목록 조회**
+  2.3. **광고목록 조회**
 
 Tnk서버에서 현재 제공되는 광고 목록으로 요청한다. 광고 목록은 사용자의 단말기 종류, 설치된 마켓 종류에 따라서 다르게 제공되므로 관련 파라메터를 전달해야한다. 또한 사용자가 이미 적립한 광고는 목록에서 제외된다.
 
@@ -150,7 +150,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f
 ```
 
 
-1. **이미지 URL**
+  2.4. **이미지 URL**
 
 광고 목록의 app_id 값을 사용하여 Tnk 서버에 등록된 광고앱의 이미지 Thumb-nail 데이터를 가져올 수 있다.
 
@@ -169,7 +169,7 @@ http://api3.tnkfactory.com/tnk/ad.icon.main
 http://api3.tnkfactory.com/tnk/ad.icon.main?app_id=105
 ```
 
-1. **queryJoin**
+  2.5. **queryJoin**
 
 해당 광고 상품이 사용자에게 이미 지급되었는지 확인 요청한다. 이 API는 사용자에게 동일 광고에 대한 보상이 중복되어 지급지 않도록하기 위하여 사전 점검하는 API이며 다음에 설명할 requestJoin API를 통해서도 중복 여부에대한 확인이 가능하므로 queryJoin API를 꼭 사용해야하는 것은 아니다.
 
@@ -205,7 +205,7 @@ https://api3.tnkfactory.com/tnk/ad.queryjoin.main?pid=e0a08070-b0f1-2359-9532-1f
 {"ret_cd":"S", "actn_id":2, "actn_desc":"롯데체크카드를 신청합니다.(포인트는 자동 지급됩니다.)", "app_desc":"- 본 이벤트는 만 18세 이상 롯데카드 신규 회원님만 1일 1회 참여 가능합니다.\r\n- 롯데닷컴 최고 5% 할인\r\n- 롯데포인트 최고 10% 적립\r\n- 연회비 면체 및 SMS 무료\r\n- 롯데리아 할인","dev_nm":"롯데"}
 ```
 
-1. **requestJoin**
+  2.6. **requestJoin**
 
 해당 광고 상품에 대하여 사용자가 참여한다는 것을 TnkAd 서버에게 알리는 API 이다. 이 API는 설치형이나 실행/액션형 광고 모두 반드시 호출해야하는 API이다. 이 API를 호출하지 않고 외부 매체가 임의로 광고 참여하게 되면 이후 리워드 지급을 받을 수 없다.
 
@@ -240,7 +240,7 @@ http://api3.tnkfactory.com/tnk/ad.requestjoin.main?pid=e0a08070-b0f1-2359-9532-1
 ```
 {"ret_cd":"S", "mkt_id":"W", "mkt_url":"http://www.tnkfactory.com/tnk/customers.app.main?action=lottecardpage&adkey=972854a8b006c155c47b771229ec26a6afcd160b3742cf8f1a0e844d2eef90323749df69b6926cc96c14a148a1"}
 ```
-1. **Click URL**
+  2.7. **Click URL**
 
 사용자가 광고에 참여하는 것을 서버연동 API인 requestJoin을 사용하지 않고 사용자의 단말기에서 단순하게 아래의 Link를 open하는 것으로 대치할 수 있다.
 
@@ -272,7 +272,7 @@ https://api3.tnkfactory.com/tnk/ad.click.main
 https://api3.tnkfactory.com/tnk/ad.click.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105&md_user_nm=00001&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123
 ```
 
-1. **requestReward (설치형)**
+  2.8. **requestReward (설치형)**
 
 설치형 광고 상품에 대하여 외부 매체가 해당 앱에 대한 설치확인을 수행한 후 설치가 확인되면 이 API를 호출하여 TnkAd 서버에 리워드 지급 요청을 해야한다.
 
@@ -296,7 +296,7 @@ http://api3.tnkfactory.com/tnk/ad.requestreward.main
 - Return 값
   - ret\_cd : 처리 결과 값 (3.1 리턴 코드 참고)
 
-1. **광고 적립 URL 호출**
+  2.9. **광고 적립 URL 호출**
 
 설치형이나 실행형/액션형 광고 상품 종류와 상관없이 적립이 성공적으로 수행되면 그 결과를 사전에 설정한 “포인트 자체관리 URL” 로 호출해 준다.
 
@@ -351,8 +351,8 @@ if (checkCode == null || !checkCode.equals(verifyCode)) {
 ```
 
 
-1. **기타**
-   1. **리턴 코드**
+3. **기타**
+  3.1. **리턴 코드**
 
 |구분|코드값|내용|
 | :-: | :-: | :-: |
@@ -369,7 +369,7 @@ if (checkCode == null || !checkCode.equals(verifyCode)) {
 ||E8|파라메터 오류|
 ||E9|시스템 오류|
 
-1. **기기 식별값**
+  3.2. **기기 식별값**
 - iOS – IdFA (Id for Advertiser)
   - 예시) **D155CEB1-382B-437D-BEC0-B80A4C7AFCF3**
 - Android – Advertising ID
@@ -433,7 +433,7 @@ private String[] getWidevineInfo() {
 
 
 
-1. **광고유형 코드**
+  3.3. **광고유형 코드**
 
 |코드값|내용|
 | :-: | :-: |
