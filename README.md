@@ -304,19 +304,19 @@ http://api3.tnkfactory.com/tnk/ad.requestreward.main
 
 - Request Parameter
 
-|파라메터 명|내용|
-| :-: | :-: |
-|app\_id|캠페인 중인 광고 앱 ID|
-|md\_user\_nm|매체사에서 사용하는 사용자 ID (Request Join 시 전달한 경우 이를 다시 반환해 줌)|
-|md\_chk|전달된 값이 유효한지 여부를 판단하기 위하여 제공된다. 이 값은 app\_key + md\_user\_nm + seq\_id 의 MD5 Hash 값이다. app\_key 값은 앱 등록시 부여된 값으로 Tnk 사이트에서 확인할 수 있다.|
-|ext\_data|RequestJoin 호출시 전달했던 값|
-|pay\_pnt|지급 되는 포인트 값이다.|
-|pay\_amt|정산되는 금액.|
-|seq\_id|포인트 지급에 대한 고유한 ID 값이다. 동일한 리워드 적립이 반복적으로 호출되어도 이 값을 이용하여 중복 지급을 확인할 수 있다.|
-|app\_nm|광고앱의 명칭|
-|pay\_dt|포인트 지급일시.(포인트 지급 조건이 충족되어 처음으로 포인트 지급을 시도한 시간) – milliseconds (ex - 1580358657348)|
-|pay\_cnt|구매형 – 구매수량|
-|actn\_id|<p>- 0 : 설치형</p><p>- 1 : 실행형</p><p>- 2 : 액션형</p><p>- 5 : 구매형</p>|
+|파라메터 명|내용|타입|
+| :-: | :-: | :-: |
+|app\_id|캠페인 중인 광고 앱 ID|long|
+|md\_user\_nm|매체사에서 사용하는 사용자 ID (Request Join 시 전달한 경우 이를 다시 반환해 줌)|string(256)|
+|md\_chk|전달된 값이 유효한지 여부를 판단하기 위하여 제공된다. 이 값은 app\_key + md\_user\_nm + seq\_id 의 MD5 Hash 값이다. app\_key 값은 앱 등록시 부여된 값으로 Tnk 사이트에서 확인할 수 있다.|string(32)|
+|ext\_data|RequestJoin 호출시 전달했던 값|string(500)|
+|pay\_pnt|지급 되는 포인트 값이다.|long|
+|pay\_amt|정산되는 금액.|long|
+|seq\_id|포인트 지급에 대한 고유한 ID 값이다. 동일한 리워드 적립이 반복적으로 호출되어도 이 값을 이용하여 중복 지급을 확인할 수 있다.|string(50)|
+|app\_nm|광고앱의 명칭|string(120)|
+|pay\_dt|포인트 지급일시.(포인트 지급 조건이 충족되어 처음으로 포인트 지급을 시도한 시간) – milliseconds (ex - 1580358657348)|long|
+|pay\_cnt|구매형 – 구매수량|int|
+|actn\_id|<p>- 0 : 설치형</p><p>- 1 : 실행형</p><p>- 2 : 액션형</p><p>- 5 : 구매형</p>|int|
 
 - Return 값
   - 별도 리턴값을 받지 않는다. 다만 HTTP 리턴 코드가 200 인경우에는 정상처리로 간주하고, 그 외에는 비정상처리로 간주한다. 비정상 처리 호출은 Tnk 서버에서 5분 및 1시간 간격으로 최대 24시간 동안 반복적으로 호출된다.
