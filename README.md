@@ -251,7 +251,7 @@ http://api3.tnkfactory.com/tnk/ad.requestjoin.main?pid=e0a08070-b0f1-2359-9532-1
 https://api3.tnkfactory.com/tnk/ad.click.main
 ```
 |파라메터 명|내용|
-| :-: | :-: |
+| :-: | :-- |
 |pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
 |app\_id|캠페인 중인 광고 앱 ID|
 |adid|<p>Android의 경우 Advertising ID 값 (3.4 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
@@ -305,7 +305,7 @@ http://api3.tnkfactory.com/tnk/ad.requestreward.main
 - Request Parameter
 
 |파라메터 명|내용|타입|
-| :-: | :-: | :-: |
+| :-: | :-- | :-: |
 |app\_id|캠페인 중인 광고 앱 ID|long|
 |md\_user\_nm|매체사에서 사용하는 사용자 ID (Request Join 시 전달한 경우 이를 다시 반환해 줌)|string(256)|
 |md\_chk|전달된 값이 유효한지 여부를 판단하기 위하여 제공된다. 이 값은 app\_key + md\_user\_nm + seq\_id 의 MD5 Hash 값이다. app\_key 값은 앱 등록시 부여된 값으로 Tnk 사이트에서 확인할 수 있다.|string(32)|
@@ -358,7 +358,7 @@ if (checkCode == null || !checkCode.equals(verifyCode)) {
 #### 3.1. **리턴 코드**
 
 |구분|코드값|내용|
-| :-: | :-: | :-: |
+| :-: | :-- | :-: |
 |정상|S|정상처리(해당 광고 캠페인이 Live 상태인 경우)|
 ||T|정상처리(해당 광고 캠페인이 Test 상태인 경우)|
 ||P1|정상처리(실제 포인트 적립시까지 약간의 시간 소요)|
