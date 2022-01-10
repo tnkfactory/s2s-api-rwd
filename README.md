@@ -94,7 +94,7 @@ http://api3.tnkfactory.com/tnk/ad.offerlist.main
 - Request Parameter
 
 |파라메터 명|내용|
-| :-: | :-: |
+| :-: | :-- |
 |pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
 |adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
 |uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
@@ -106,8 +106,8 @@ http://api3.tnkfactory.com/tnk/ad.offerlist.main
 |ext\_mkt|<p>사용자의 단말기에 설치된 통신사 마켓 정보를 전달한다.</p><p>- T : 티스토어,  K : 올레마켓, O : LG U+마켓(구 오즈스토어)</p><p>여러개의 마켓이 설치된 경우에는 | 기호로 연결하여 전달한다. 예) T|K</p>|
 
 
-|Optional 파라메터 (타게팅을 위하여 사용됨)|
-| :- |
+|Optional 파라메터 (타게팅을 위하여 사용됨)|내|
+| :-: | :-- |
 |res\_cd|<p>(Optional)</p><p>단말기의 해상도에 따른 타게팅을 위하여 사용된다.</p><p>단말기의 가로 해상도를 지정한다</p><p>예) 해상도가 480x800 인경우 480으로 전달</p>|
 |user\_brth|사용자의 연령|
 |user\_sex|사용자의 성별 (M/F)|
@@ -121,7 +121,7 @@ http://api3.tnkfactory.com/tnk/ad.offerlist.main
   - list : 광고 목록 데이터
 
 |컬럼명|내용|
-| :-: | :-: |
+| :-: | :-- |
 |app\_id|**광고앱 고유 ID**|
 |actn\_id|<p>광고 형태 값을 나타냄</p><p>- 0 : 설치형 (설치형의 경우 매체에서 설치확인을 하고 “2.6 requestReward”를 사용하여 적립요청을 해야함)</p><p>- 1 : 실행형</p><p>- 2 : 액션형</p><p>실행형과 액션형은 Tnk 서버에서 매체서버로 적립내용을 호출해준다.</p><p>- 5 : 구매형</p><p>사용자 결제완료시 매체서버로 적립내용을 호출해준다.</p>|
 |app\_pkg|안드로이드의 경우 앱의 패키지명이고 iOS의 경우에는 custom URL 값이다. 광고 형태가 설치형인 경우(actn\_id = 0)에는 이 값을 이용하여 설치여부를 판단해야한다.|
@@ -180,7 +180,7 @@ http://api3.tnkfactory.com/tnk/ad.icon.main?app_id=105
 - Request Parameter
 
 |파라메터 명|내용|
-| :-: | :-: |
+| :-: | :-- |
 |pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
 |app\_id|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
 |adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
@@ -218,7 +218,7 @@ https://api3.tnkfactory.com/tnk/ad.requestjoin.main
 - Request Parameter
 
 |파라메터 명|내용|
-| :-: | :-: |
+| :-: | :-- |
 |pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
 |app\_id|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
 |adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
@@ -285,7 +285,7 @@ https://api3.tnkfactory.com/tnk/ad.click.main?pid=e0a08070-b0f1-2359-9532-1f0b07
 http://api3.tnkfactory.com/tnk/ad.requestreward.main
 ```
 |파라메터 명|내용|
-| :-: | :-: |
+| :-: | :-- |
 |pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
 |app\_id|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
 |adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
@@ -358,7 +358,7 @@ if (checkCode == null || !checkCode.equals(verifyCode)) {
 #### 3.1. **리턴 코드**
 
 |구분|코드값|내용|
-| :-: | :-- | :-: |
+| :-: | :-: | :-- |
 |정상|S|정상처리(해당 광고 캠페인이 Live 상태인 경우)|
 ||T|정상처리(해당 광고 캠페인이 Test 상태인 경우)|
 ||P1|정상처리(실제 포인트 적립시까지 약간의 시간 소요)|
