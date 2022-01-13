@@ -177,7 +177,9 @@ https://api3.tnkfactory.com/tnk/ad.icon.main?app_id=105
 해당 광고 상품이 사용자에게 이미 지급되었는지 확인 요청한다. 이 API는 사용자에게 동일 광고에 대한 보상이 중복되어 지급지 않도록하기 위하여 사전 점검하는 API이며 다음에 설명할 requestJoin API를 통해서도 중복 여부에대한 확인이 가능하므로 queryJoin API를 꼭 사용해야하는 것은 아니다.
 
 - Requst URL
-  - https://api3.tnkfactory.com/tnk/ad.queryjoin.main
+``` 
+https://api3.tnkfactory.com/tnk/ad.queryjoin.main
+``` 
 - Request Parameter
 
 |파라메터 명|내용|
