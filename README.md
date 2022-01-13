@@ -1,17 +1,16 @@
-# TnkAd Integration Guide
+# 외부 매체 연동 가이드
 
-### (외부 매체 연동 가이드)
+### (TnkAd Integration Guide)
 
-### V 5.2
 
 ### [http://www.tnkfactory.com](http://www.tnkfactory.com/)
 
 
 \- 변경사항
 
-- 2022/01/13 (V 5.2)
+- 2022/01/13
   - 3.4 카테고리 코드 추가
-- 2021/09/24 (V 5.1)
+- 2021/09/24
   - 2.3 광고목록 조회 리턴 값(cat\_id - 구매형) 추가
 - 2021/07/27
   - 2.3 광고목록 조회 리턴 값(cmpn\_type) 추가
