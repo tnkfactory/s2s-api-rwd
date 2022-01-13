@@ -3,7 +3,7 @@
 ### (TnkAd Integration Guide)
 
 
-### [http://www.tnkfactory.com](http://www.tnkfactory.com/)
+### [https://www.tnkfactory.com](https://www.tnkfactory.com/)
 
 
 \- 변경사항
@@ -90,7 +90,7 @@ Tnk서버에서 현재 제공되는 광고 목록으로 요청한다. 광고 목
 
 - Requst URL
 ``` 
-http://api3.tnkfactory.com/tnk/ad.offerlist.main
+https://api3.tnkfactory.com/tnk/ad.offerlist.main
 ```
 - Request Parameter
 
@@ -159,7 +159,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f
 
 - Requst URL
 ``` 
-http://api3.tnkfactory.com/tnk/ad.icon.main
+https://api3.tnkfactory.com/tnk/ad.icon.main
 ```  
 - Request Parameter
 
@@ -169,7 +169,7 @@ http://api3.tnkfactory.com/tnk/ad.icon.main
 
 - 호출 예시
 ```
-http://api3.tnkfactory.com/tnk/ad.icon.main?app_id=105
+https://api3.tnkfactory.com/tnk/ad.icon.main?app_id=105
 ```
 
 #### 2.5. **queryJoin**
@@ -238,7 +238,7 @@ https://api3.tnkfactory.com/tnk/ad.requestjoin.main
   - mkt\_url : 이동해야할 웹 또는 마켓 URL 이다.
 - 호출 예시
 ```
-http://api3.tnkfactory.com/tnk/ad.requestjoin.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105& md_user_nm=00001&ext_mkt=T&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123
+https://api3.tnkfactory.com/tnk/ad.requestjoin.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105& md_user_nm=00001&ext_mkt=T&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123
 ```
 ```
 {"ret_cd":"S", "mkt_id":"W", "mkt_url":"http://www.tnkfactory.com/tnk/customers.app.main?action=lottecardpage&adkey=972854a8b006c155c47b771229ec26a6afcd160b3742cf8f1a0e844d2eef90323749df69b6926cc96c14a148a1"}
@@ -283,7 +283,7 @@ https://api3.tnkfactory.com/tnk/ad.click.main?pid=e0a08070-b0f1-2359-9532-1f0b07
 
 - Requst URL : 
 ```
-http://api3.tnkfactory.com/tnk/ad.requestreward.main
+https://api3.tnkfactory.com/tnk/ad.requestreward.main
 ```
 |파라메터 명|내용|
 | :-: | :-- |
@@ -390,7 +390,7 @@ Tnk의 SDK를 적용하실 경우에는 SDK내에서 Advertising ID값을 획득
 
 획득하신 Advertising ID는 Tnk의 서버 API 호출시 adid 파라메터로 전달해주시면 됩니다.
 
-호출 예시) [http://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04](http://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d)[&adid=38400000-8cf0-11bd-b23e-10b96e40000d](http://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d)
+호출 예시) [https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04](http://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d)[&adid=38400000-8cf0-11bd-b23e-10b96e40000d](http://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d)
 
 - Widevine ID
 
