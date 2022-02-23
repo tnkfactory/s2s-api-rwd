@@ -8,6 +8,8 @@
 
 \- 변경사항
 
+- 2022/02/23
+  - 2.3 광고목록 조회 요청파라미터 (sub_id) 삭제
 - 2022/01/13
   - 3.4 카테고리 코드 추가
 - 2021/09/24
@@ -99,7 +101,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 |pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
 |adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
 |uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
-|sub\_id|하위 매체의 ID(있는 경우만)|
+|~~sub\_id|하위 매체의 ID(있는 경우만)~~|
 |wvid|Widevine DRM용 ID값 (안드로이드인 경우만)|
 |wvlvl|Widevine security level (L1/L3)|
 |md\_user\_nm|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이 값을 기준으로 중복제거하여 광고노출이 이루어진다.|
