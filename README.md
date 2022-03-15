@@ -144,7 +144,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 |dev\_nm|광고 개발사 명칭|
 |adv\_amt|광고비|
 |pay\_amt|매체지급금 (광고비에서 TNK 수수료를 제외한 금액)|
-|sale\_amt|CPS상품 판매가(구매형이 경우에만 값이 존재, 구매형이 아닌 경우 값은 0 이다.)|
+|sale\_amt|CPS상품 판매가(구매형인 경우 해당 상품의 , 구매형이 아닌 경우 값은 0 이다.)|
 |cmpn\_type|광고유형 : 3.3 광고유형 코드 참조|
 
 
