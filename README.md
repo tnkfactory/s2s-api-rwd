@@ -152,7 +152,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 
 
 ```
-https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123&orientation=3
+https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d&md_user_nm=publisher_user_id&ip_addr=123.123.123.123&orientation=3
 ```
 
 
