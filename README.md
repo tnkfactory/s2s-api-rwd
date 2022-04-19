@@ -152,7 +152,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 
 
 ```
-https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d&md_user_nm=publisher_user_id&ip_addr=123.123.123.123&orientation=3
+https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&adid=38400000-8cf0-11bd-b23e-10b96e40000d&md_user_nm=00001&ip_addr=123.123.123.123&orientation=3
 ```
 
 
@@ -196,6 +196,7 @@ https://api3.tnkfactory.com/tnk/ad.queryjoin.main
 |app\_id|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
 |adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
 |uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
+|md\_user\_nm|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이후  적립 URL 호출시 다시 전달해준다.|
 |sub\_id|하위 매체의 ID(있는 경우만)|
 |wvid|Widevine DRM용 ID값 (안드로이드인 경우만)|
 |wvlvl|Widevine security level (L1/L3)|
@@ -212,7 +213,7 @@ https://api3.tnkfactory.com/tnk/ad.queryjoin.main
 
 - 호출 예시
 ``` 
-https://api3.tnkfactory.com/tnk/ad.queryjoin.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123
+https://api3.tnkfactory.com/tnk/ad.queryjoin.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105&adid=38400000-8cf0-11bd-b23e-10b96e40000d&md_user_nm=00001&ip_addr=123.123.123.123
 ```
 ``` json
 {"ret_cd":"S", "actn_id":2, "actn_desc":"롯데체크카드를 신청합니다.(포인트는 자동 지급됩니다.)", "app_desc":"- 본 이벤트는 만 18세 이상 롯데카드 신규 회원님만 1일 1회 참여 가능합니다.\r\n- 롯데닷컴 최고 5% 할인\r\n- 롯데포인트 최고 10% 적립\r\n- 연회비 면체 및 SMS 무료\r\n- 롯데리아 할인","dev_nm":"롯데"}
@@ -248,7 +249,7 @@ https://api3.tnkfactory.com/tnk/ad.requestjoin.main
   - mkt\_url : 이동해야할 웹 또는 마켓 URL 이다.
 - 호출 예시
 ```
-https://api3.tnkfactory.com/tnk/ad.requestjoin.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105& md_user_nm=00001&ext_mkt=T&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123
+https://api3.tnkfactory.com/tnk/ad.requestjoin.main?pid=e0a08070-b0f1-2359-9532-1f0b07040e04&app_id=105&md_user_nm=00001&ext_mkt=T&adid=38400000-8cf0-11bd-b23e-10b96e40000d&ip_addr=123.123.123.123
 ```
 ```
 {"ret_cd":"S", "mkt_id":"W", "mkt_url":"http://www.tnkfactory.com/tnk/customers.app.main?action=lottecardpage&adkey=972854a8b006c155c47b771229ec26a6afcd160b3742cf8f1a0e844d2eef90323749df69b6926cc96c14a148a1"}
