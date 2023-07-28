@@ -8,6 +8,12 @@
 
 \- 변경사항
 
+- 2023/07/28
+  - request parameter 필수 여부 추가
+  - request parameter 미사용 컬럼 삭제
+  - 멀티캠페인 관련 내용 추가
+    - 2.3 광고목록조회  리턴값 추가 (multi_yn, tot_adv_amt, tot_pay_amt, tot_pnt_amt)
+    - 2.5 queryjoin 리턴값 추가 (list)
 - 2022/05/09
   - actn_id 값 추가 (4 : 클릭형)
 - 2022/03/15
@@ -102,17 +108,17 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 ```
 - Request Parameter
 
-|파라메터 명|내용|
-| :-: | :-- |
-|pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
-|adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
-|uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
-|~~sub\_id~~|~~하위 매체의 ID(있는 경우만)~~|
-|wvid|Widevine DRM용 ID값 (안드로이드인 경우만)|
-|wvlvl|Widevine security level (L1/L3)|
-|md\_user\_nm|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이 값을 기준으로 중복제거하여 광고노출이 이루어진다.|
-|ip\_addr|사용자 단말기의 IP 주소|
-|ext\_mkt|<p>사용자의 단말기에 설치된 통신사 마켓 정보를 전달한다.</p><p>- T : 티스토어,  K : 올레마켓, O : LG U+마켓(구 오즈스토어)</p><p>여러개의 마켓이 설치된 경우에는 \| 기호로 연결하여 전달한다. 예) T\|K</p>|
+|파라메터 명|필수여부|내용|
+| :-: | :-: | :-- |
+|pid|O|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
+|adid|O|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
+|md\_user\_nm|O|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이 값을 기준으로 중복제거하여 광고노출이 이루어진다.|
+|uid|X|사용자 단말기의 IMEI (안드로이드인 경우만)|
+|wvid|X|Widevine DRM용 ID값 (안드로이드인 경우만)|
+|wvlvl|X|Widevine security level (L1/L3)|
+|ip\_addr|X|사용자 단말기의 IP 주소|
+|~~sub\_id~~|~~X~~|~~하위 매체의 ID(있는 경우만)~~|
+|~~ext\_mkt~~|~~X~~|~~<p>사용자의 단말기에 설치된 통신사 마켓 정보를 전달한다.</p><p>- T : 티스토어,  K : 올레마켓, O : LG U+마켓(구 오즈스토어)</p><p>여러개의 마켓이 설치된 경우에는 \| 기호로 연결하여 전달한다. 예) T\|K</p>~~|
 
 
 |Optional 파라메터|(타게팅을 위하여 사용됨)|
@@ -140,6 +146,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 |free\_yn|무료 여부이다. (Y :무료, N:유료)|
 |app\_nm|앱 명칭|
 |corp\_desc|앱 요약 설명|
+|actn\_desc|액션 설명|
 |pnt\_unit|포인트 단위 명칭|
 |img\_url|Orientation 파라미터가 있는 경우 orientation에 해당하는 이미지 URL|
 |cat\_id|<p>앱에 속한 카테고리 ID이다.(ex- GM, GS, GT, FN ….)</p><p>구매형 카테고리 (01:생활,03:뷰티,05:식품,06:잡화,07:건강)</p><p>3.4 카테고리 코드 참조</p>|
@@ -147,6 +154,10 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 |adv\_amt|광고비|
 |pay\_amt|매체지급금 (광고비에서 TNK 수수료를 제외한 금액)|
 |sale\_amt|CPS상품 판매가(구매형인 경우 해당 상품의 , 구매형이 아닌 경우 값은 0 이다.)|
+|multi\_yn|멀티캠페인 여부 (Y : 멀티캠페인, N : 단일캠페인)|
+|tot\_adv\_amt|광고비 (캠페인 모두 참여 완료 했을 때의 광고비)|
+|tot\_pay\_amt|매체지급금 (광고비에서 TNK 수수료를 제외한 금액) (캠페인 모두 참여 완료 했을 때의 매체지급금)|
+|tot\_pnt\_amt|사용자에게 지급되는 포인트 값 (캠페인 모두 참여 완료 했을 때의 사용자 지급 포인트)|
 |cmpn\_type|광고유형 : 3.3 광고유형 코드 참조|
 
 
@@ -192,18 +203,18 @@ https://api3.tnkfactory.com/tnk/ad.queryjoin.main
 ``` 
 - Request Parameter
 
-|파라메터 명|내용|
-| :-: | :-- |
-|pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
-|app\_id|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
-|adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
-|uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
-|md\_user\_nm|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이후  적립 URL 호출시 다시 전달해준다.|
-|sub\_id|하위 매체의 ID(있는 경우만)|
-|wvid|Widevine DRM용 ID값 (안드로이드인 경우만)|
-|wvlvl|Widevine security level (L1/L3)|
-|ip\_addr|사용자 단말기의 IP 주소|
-|ph\_lang|언어코드 (ko, en, ja 등 다국어 처리용) (기본값 : ko)|
+|파라메터 명|필수여부|내용|
+| :-: | :-: | :-- |
+|pid|O|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
+|app\_id|O|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
+|adid|O|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
+|md\_user\_nm|O|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이후  적립 URL 호출시 다시 전달해준다.|
+|uid|X|사용자 단말기의 IMEI (안드로이드인 경우만)|
+|wvid|X|Widevine DRM용 ID값 (안드로이드인 경우만)|
+|wvlvl|X|Widevine security level (L1/L3)|
+|ip\_addr|X|사용자 단말기의 IP 주소|
+|ph\_lang|X|언어코드 (ko, en, ja 등 다국어 처리용) (기본값 : ko)|
+|~~sub\_id~~|~~X~~|~~하위 매체의 ID(있는 경우만)~~|
 
 
 - Return 값
@@ -212,6 +223,21 @@ https://api3.tnkfactory.com/tnk/ad.queryjoin.main
   - actn\_desc : 액션형 광고인 경우(actn\_id = 2) 사용자가 포인트 적립을 위하여 수행해야할 내용이다.
   - app\_desc : 광고에 대한 상세 설명 문구이다.
   - dev\_nm : 광고 개발사 명칭
+  - list : 캠페인 목록 데이터
+    - [{app\_id, actn\_id, cmpn\_type, pnt\_amt, multi\_desc, actn\_desc, pnt\_unit, adv\_amt, pay\_amt, sale\_amt},...]
+
+  |파라미터 명|내용|
+  | :-: | :-- |
+  |app\_id|캠페인ID|
+  |actn\_id|<p>광고 형태 값을 나타냄</p><p>- 0 : 설치형, 1 : 실행형, 2 : 액션형, 4 : 클릭형, 5 : 구매형</p>|
+  |cmpn\_type|캠페인유형|
+  |pnt\_amt|사용자 지급 포인트|
+  |multi\_desc|멀티캠페인 설명|
+  |actn\_desc|액션설명|
+  |pnt\_unit|포인트 단위 명칭|
+  |adv\_amt|광고비|
+  |pay\_amt|매체지급금|
+  |sale\_amt|CPS의 경우 판매가가|
 
 - 호출 예시
 ``` 
@@ -231,23 +257,23 @@ https://api3.tnkfactory.com/tnk/ad.requestjoin.main
 ```  
 - Request Parameter
 
-|파라메터 명|내용|
-| :-: | :-- |
-|pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
-|app\_id|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
-|adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
-|uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
-|md\_user\_nm|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이후  적립 URL 호출시 다시 전달해준다.|
-|sub\_id|하위 매체의 ID(있는 경우만)|
-|wvid|Widevine DRM용 ID값 (안드로이드인 경우만)|
-|wvlvl|Widevine security level (L1/L3)|
-|ph\_mdl|사용자 단말기의 모델 명|
-|ip\_addr|사용자 단말기의 IP 주소|
-|ext\_data|추가 데이터가 있는 경우 지정한다. 이후 적립 URL 호출 시 다시 전달해 준다.|
-|ext\_mkt|<p>사용자의 단말기에 설치된 통신사 마켓 정보를 전달한다. (구글 또는 앱스토어 정보는 전달할 필요없음)</p><p>- T : 티스토어,  K : 올레마켓, O : LG U+마켓(구 오즈스토어)</p><p>여러개의 마켓이 설치된경우에는 | 기호로 연결하여 전달한다.</p>|
+|파라메터 명|필수여부|내용|
+| :-: | :-: | :-- |
+|pid|O|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
+|app\_id|O|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
+|adid|O|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
+|md\_user\_nm|O|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이후  적립 URL 호출시 다시 전달해준다.|
+|uid|X|사용자 단말기의 IMEI (안드로이드인 경우만)|
+|wvid|X|Widevine DRM용 ID값 (안드로이드인 경우만)|
+|wvlvl|X|Widevine security level (L1/L3)|
+|ph\_mdl|X|사용자 단말기의 모델 명|
+|ip\_addr|X|사용자 단말기의 IP 주소|
+|ext\_data|X|추가 데이터가 있는 경우 지정한다. 이후 적립 URL 호출 시 다시 전달해 준다.|
+|~~sub\_id~~|~~X~~|~~하위 매체의 ID(있는 경우만)~~|
+|~~ext\_mkt~~|~~X~~|~~<p>사용자의 단말기에 설치된 통신사 마켓 정보를 전달한다. (구글 또는 앱스토어 정보는 전달할 필요없음)</p><p>- T : 티스토어,  K : 올레마켓, O : LG U+마켓(구 오즈스토어)</p><p>여러개의 마켓이 설치된경우에는 \| 기호로 연결하여 전달한다.</p>~~|
 - Return 값
   - ret\_cd : 처리 결과 값 (3.1 리턴 코드 참고)
-  - mkt\_id : 이동해야할 마켓의 종류이다 (W: 웹페이지, G: 구글플레이, T:티스토어, K:올레마켓, O: LG U+마켓, I : 앱스토어)
+  - mkt\_id : 이동해야할 마켓의 종류이다 (W: 웹페이지, G: 구글플레이, ~~T:티스토어~~, ~~K:올레마켓~~, ~~O: LG U+마켓~~, 1 : 원스토어, I : 앱스토어)
   - mkt\_url : 이동해야할 웹 또는 마켓 URL 이다.
 - 호출 예시
 ```
@@ -264,20 +290,20 @@ https://api3.tnkfactory.com/tnk/ad.requestjoin.main?pid=e0a08070-b0f1-2359-9532-
 ```
 https://api3.tnkfactory.com/tnk/ad.click.main
 ```
-|파라메터 명|내용|
-| :-: | :-- |
-|pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
-|app\_id|캠페인 중인 광고 앱 ID|
-|adid|<p>Android의 경우 Advertising ID 값 (3.4 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
-|uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
-|md\_user\_nm|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이후  적립 URL 호출시 다시 전달해준다.|
-|sub\_id|하위 매체의 ID(있는 경우만)|
-|wvid|Widevine DRM용 ID값 (안드로이드인 경우만)|
-|wvlvl|Widevine security level (L1/L3)|
-|ph\_mdl|사용자 단말기의 모델 명|
-|ip\_addr|사용자 단말기의 IP 주소|
-|ext\_data|추가 데이터가 있는 경우 지정한다. 이후 적립 URL 호출 시 다시 전달해 준다.|
-|ext\_mkt|<p>사용자의 단말기에 설치된 통신사 마켓 정보를 전달한다. (구글 또는 앱스토어 정보는 전달할 필요없음)</p><p>- T : 티스토어,  K : 올레마켓, O : LG U+마켓(구 오즈스토어)</p><p>여러개의 마켓이 설치된경우에는 | 기호로 연결하여 전달한다.</p><p>하나의 광고에 여러개의 마켓이 연결될 수 있는데, 이 값을 사용하여 사용자의 단말기에 설치된 마켓에 맞는 마켓 URL을 전달해준다.</p>|
+|파라메터 명|필수여부|내용|
+| :-: | :-: | :-- |
+|pid|O|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
+|app\_id|O|캠페인 중인 광고 앱 ID|
+|adid|O|<p>Android의 경우 Advertising ID 값 (3.4 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
+|md\_user\_nm|O|매체사에서 사용하는 사용자 ID 값이 있는 경우 이를 지정하면 이후  적립 URL 호출시 다시 전달해준다.|
+|uid|X|사용자 단말기의 IMEI (안드로이드인 경우만)|
+|wvid|X|Widevine DRM용 ID값 (안드로이드인 경우만)|
+|wvlvl|X|Widevine security level (L1/L3)|
+|ph\_mdl|X|사용자 단말기의 모델 명|
+|ip\_addr|X|사용자 단말기의 IP 주소|
+|ext\_data|X|추가 데이터가 있는 경우 지정한다. 이후 적립 URL 호출 시 다시 전달해 준다.|
+|~~sub\_id~~|~~X~~|~~하위 매체의 ID(있는 경우만)~~|
+|~~ext\_mkt~~|~~X~~|~~<p>사용자의 단말기에 설치된 통신사 마켓 정보를 전달한다. (구글 또는 앱스토어 정보는 전달할 필요없음)</p><p>- T : 티스토어,  K : 올레마켓, O : LG U+마켓(구 오즈스토어)</p><p>여러개의 마켓이 설치된경우에는 \| 기호로 연결하여 전달한다.</p><p>하나의 광고에 여러개의 마켓이 연결될 수 있는데, 이 값을 사용하여 사용자의 단말기에 설치된 마켓에 맞는 마켓 URL을 전달해준다.</p>~~|
 
 - Return 값
   - 해당 광고의 페이지 또는 마켓으로 이동한다.
@@ -298,16 +324,16 @@ https://api3.tnkfactory.com/tnk/ad.click.main?pid=e0a08070-b0f1-2359-9532-1f0b07
 ```
 https://api3.tnkfactory.com/tnk/ad.requestreward.main
 ```
-|파라메터 명|내용|
-| :-: | :-- |
-|pid|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
-|app\_id|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
-|adid|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
-|uid|사용자 단말기의 IMEI (안드로이드인 경우만)|
-|sub\_id|하위 매체의 ID(있는 경우만)|
-|wvid|Widevine DRM용 ID값 (안드로이드인 경우만)|
-|wvlvl|Widevine security level (L1/L3)|
-|ip\_addr|사용자 단말기의 IP 주소|
+|파라메터 명|필수여부|내용|
+| :-: | :-: | :-- |
+|pid|O|<p>TnkAd 사이트에 등록된 외부 매체사의 외부 매체 앱의 App ID</p><p>**(예시 : e0a08070-b0f1-2359-9532-1f0b07040e04)**</p>|
+|app\_id|O|캠페인 중인 광고 앱 ID (향후 별도로 전달)|
+|adid|O|<p>Android의 경우 Advertising ID 값 (3.2 Advertising ID 참고)</p><p>iOS의 경우 IdFA (3.2 idFA 참고)</p>|
+|uid|X|사용자 단말기의 IMEI (안드로이드인 경우만)|
+|wvid|X|Widevine DRM용 ID값 (안드로이드인 경우만)|
+|wvlvl|X|Widevine security level (L1/L3)|
+|ip\_addr|X|사용자 단말기의 IP 주소|
+|~~sub\_id~~|~~X~~|~~하위 매체의 ID(있는 경우만)~~|
 
 - Return 값
   - ret\_cd : 처리 결과 값 (3.1 리턴 코드 참고)
