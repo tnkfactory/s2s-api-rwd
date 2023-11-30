@@ -351,7 +351,7 @@ https://api3.tnkfactory.com/tnk/ad.requestreward.main
 |md\_chk|전달된 값이 유효한지 여부를 판단하기 위하여 제공된다. 이 값은 app\_key + md\_user\_nm + seq\_id 의 MD5 Hash 값이다. app\_key 값은 앱 등록시 부여된 값으로 Tnk 사이트에서 확인할 수 있다.|string(32)|
 |ext\_data|RequestJoin 호출시 전달했던 값|string(500)|
 |pay\_pnt|지급 되는 포인트 값이다.|long|
-|pay\_amt|정산되는 금액.|long|
+|pay\_amt|정산되는 금액.|double|
 |seq\_id|포인트 지급에 대한 고유한 ID 값이다. 동일한 리워드 적립이 반복적으로 호출되어도 이 값을 이용하여 중복 지급을 확인할 수 있다.|string(50)|
 |app\_nm|광고앱의 명칭|string(120)|
 |pay\_dt|포인트 지급일시.(포인트 지급 조건이 충족되어 처음으로 포인트 지급을 시도한 시간) – milliseconds (ex - 1580358657348)|long|
