@@ -9,7 +9,7 @@
 \- 변경사항
 
 - 2023/12/15
-  - 2.3 광고목록 조회 리턴 값(icon\_url) 추가가
+  - 2.3 광고목록 조회 리턴 값(icon\_url) 추가
 - 2023/07/28
   - request parameter 필수 여부 추가
   - request parameter 미사용 컬럼 삭제
