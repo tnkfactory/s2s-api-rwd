@@ -8,6 +8,8 @@
 
 \- 변경사항
 
+- 2023/12/15
+  - 2.3 광고목록 조회 리턴 값(icon\_url) 추가가
 - 2023/07/28
   - request parameter 필수 여부 추가
   - request parameter 미사용 컬럼 삭제
@@ -154,6 +156,7 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 |adv\_amt|광고비|
 |pay\_amt|매체지급금 (광고비에서 TNK 수수료를 제외한 금액)|
 |sale\_amt|CPS상품 판매가(구매형인 경우 해당 상품의 , 구매형이 아닌 경우 값은 0 이다.)|
+|icon\_url|광고의 icon URL. 2.4 이미지 URL 대신 사용|
 |multi\_yn|멀티캠페인 여부 (Y : 멀티캠페인, N : 단일캠페인)|
 |tot\_adv\_amt|광고비 (캠페인 모두 참여 완료 했을 때의 광고비)|
 |tot\_pay\_amt|매체지급금 (광고비에서 TNK 수수료를 제외한 금액) (캠페인 모두 참여 완료 했을 때의 매체지급금)|
