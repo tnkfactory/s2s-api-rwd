@@ -8,6 +8,8 @@
 
 \- 변경사항
 
+- 2024/03/06
+  - 2.9. 광고적립 URL 호출 파라미터 APP_ID 설명 변경
 - 2023/12/15
   - 2.3 광고목록 조회 리턴 값(icon\_url) 추가
 - 2023/07/28
@@ -349,7 +351,7 @@ https://api3.tnkfactory.com/tnk/ad.requestreward.main
 
 |파라메터 명|내용|타입|
 | :-: | :-- | :-: |
-|app\_id|캠페인 중인 광고 앱 ID|long|
+|app\_id|캠페인 중인 광고 앱 ID<br />멀티캠페인의 app\_id는 마스터 app\_id 에 뎁스 * 10000000 을 더해서 만들어 진다.<br />예) 마스터 app\_id(0뎁스) : 123456, 1뎁스 : 10123456, 2뎁스 : 20123456|long|
 |md\_user\_nm|매체사에서 사용하는 사용자 ID (Request Join 시 전달한 경우 이를 다시 반환해 줌)|string(256)|
 |md\_chk|전달된 값이 유효한지 여부를 판단하기 위하여 제공된다. 이 값은 app\_key + md\_user\_nm + seq\_id 의 MD5 Hash 값이다. app\_key 값은 앱 등록시 부여된 값으로 Tnk 사이트에서 확인할 수 있다.|string(32)|
 |ext\_data|RequestJoin 호출시 전달했던 값|string(500)|
