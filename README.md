@@ -10,6 +10,7 @@
 
 - 2024/05/29
   - 3.3 광고유형코드 추가
+  - 2.4 이미지URL Deprecated 
 - 2024/05/07
   - 2.3 광고목록 조회 리턴 값(items : 멀티 캠페인 상세 목록) 추가
 - 2024/03/06
@@ -197,9 +198,9 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f
 ```
 
 
-#### 2.4. **이미지 URL**
+#### ~2.4. **이미지 URL**~ (광고목록 조회의 icon_url을 사용한다.)
 
-광고 목록의 app_id 값을 사용하여 Tnk 서버에 등록된 광고앱의 이미지 Thumb-nail 데이터를 가져올 수 있다.
+~광고 목록의 app_id 값을 사용하여 Tnk 서버에 등록된 광고앱의 이미지 Thumb-nail 데이터를 가져올 수 있다.~
 
 - Requst URL
 ``` 
