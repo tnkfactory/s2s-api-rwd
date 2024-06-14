@@ -198,24 +198,12 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main?pid=e0a08070-b0f1-2359-9532-1f
 ```
 
 
-#### ~2.4. **이미지 URL**~ (광고목록 조회의 icon_url을 사용한다.)
+#### ~2.4. **이미지 URL**~ 
 
-~광고 목록의 app_id 값을 사용하여 Tnk 서버에 등록된 광고앱의 이미지 Thumb-nail 데이터를 가져올 수 있다.~
+~~광고 목록의 app_id 값을 사용하여 Tnk 서버에 등록된 광고앱의 이미지 Thumb-nail 데이터를 가져올 수 있다.~~
 
-- Requst URL
-``` 
-https://api3.tnkfactory.com/tnk/ad.icon.main
-```  
-- Request Parameter
+광고목록 조회의 icon_url을 사용한다.
 
-|파라메터 명|내용|
-| :-: | :-: |
-|app\_id|광고앱 ID|
-
-- 호출 예시
-```
-https://api3.tnkfactory.com/tnk/ad.icon.main?app_id=105
-```
 
 #### 2.5. **queryJoin**
 
