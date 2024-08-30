@@ -353,6 +353,8 @@ https://api3.tnkfactory.com/tnk/ad.requestreward.main
 #### 2.9. **광고 적립 URL 호출**
 
 설치형이나 실행형/액션형 광고 상품 종류와 상관없이 적립이 성공적으로 수행되면 그 결과를 사전에 설정한 “포인트 자체관리 URL” 로 호출해 준다.
+#### 호출방식
+HTTP POST
 
 - Request Parameter
 
