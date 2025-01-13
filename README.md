@@ -8,6 +8,9 @@
 
 \- 변경사항
 
+- 2025/01/13
+  - 2.3 광고목록 조회 리턴 값(CPS 전용 : org_sale_amt - 상품원가) 추가
+  - 2.5 queryjoin 조회 리턴 값(CPS 전용 : org_sale_amt - 상품원가) 추가
 - 2024/05/29
   - 3.3 광고유형코드 추가
   - 2.4 이미지URL Deprecated 
@@ -162,7 +165,8 @@ https://api3.tnkfactory.com/tnk/ad.offerlist.main
 |dev\_nm|광고 개발사 명칭|
 |adv\_amt|광고비|
 |pay\_amt|매체지급금 (광고비에서 TNK 수수료를 제외한 금액)|
-|sale\_amt|CPS상품 판매가(구매형인 경우 해당 상품의 , 구매형이 아닌 경우 값은 0 이다.)|
+|sale\_amt|CPS상품 판매가(구매형인 경우 해당 상품의 판매가, 구매형이 아닌 경우 값은 0 이다.)|
+|org\_sale\_amt|CPS상품 원가(구매형인 경우 해당 상품의 원가, 구매형이 아닌 경우 값은 0 이다.)|
 |icon\_url|광고의 icon URL. 2.4 이미지 URL 대신 사용|
 |multi\_yn|멀티캠페인 여부 (Y : 멀티캠페인, N : 단일캠페인)|
 |items|[Array] 멀티캠페인 상세 리스트이다. (멀티캠페인 여부가 'Y'일 때만 존재한다.)|
@@ -249,7 +253,8 @@ https://api3.tnkfactory.com/tnk/ad.queryjoin.main
   |pnt\_unit|포인트 단위 명칭|
   |adv\_amt|광고비|
   |pay\_amt|매체지급금|
-  |sale\_amt|CPS의 경우 판매가가|
+  |sale\_amt|CPS의 경우 상품 판매가|
+  |org\_sale\_amt|CPS의 경우 상품 원가|
 
 - 호출 예시
 ``` 
