@@ -107,6 +107,32 @@ public class EncryteTest {
         return decryptAES(key, new String(Base64.decodeBase64(encrypted.getBytes("UTF-8")), "UTF-8"));
     }
 }
-
 ```
 
+#### 응답 (application/json)
+
+|파라미터|상세내용|타입|
+|--|--|--|
+| ret_cd | 응답코드 |int|
+| seq_id | 이용문의 등록 ID |int|
+
+
+##### 응답 예시
+
+```json
+{
+    "ret_cd" : 0,
+    "seq_id" : 1234
+}
+```
+
+##### 응답 코드
+|코드|내용|
+|--|--|
+|0|등록 성공|
+|-1|파라미터 오류(문의정보 없음)|
+|-2|파라미터 오류(appid에 해당하는 매체정보 없음)|
+|-3|문의정보 복호화 오류|
+|-4|Json parsing 에러|
+|-5|adid / md_user_nm 둘 다 값이 존재하지 않음|
+|-99|서버 등록 오류|
