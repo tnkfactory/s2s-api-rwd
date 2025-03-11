@@ -44,7 +44,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
 import org.json.JSONObject;
 
-public class EncryteTest {
+public class EncryptTest {
 
     public static void main(String[] args) {
         String key = "{매체앱키}";
