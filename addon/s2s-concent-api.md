@@ -64,7 +64,7 @@ public class EncryptTest {
 
 ##### 응답 코드
 |코드|메세지|내용|
-|--|--|
+|--|--|--|
 |S|SUCCESS|성공|
 |F|INVALID PARAMETER|파라미터 오류|
 |F|NOT REGIST PUBLISHER|파라미터 오류(appid에 해당하는 매체정보 없음)|
