@@ -18,7 +18,7 @@ API를 통해 TNK에 개인정보 수집동의 철회를 요청한다.
 |action|O|withdraw|String|
 |pid|O|매체AppId 값   ex)30408070-4051-9322-2239-15040708030f|String|
 |md_user_nm|O|매체 사용자 식별값|String|
-|chk_cd|O|확인 코드 값 (JsonObject String을 SHA256 암호화한 값 - 암호화 예시 참조)<br />매체앱의 앱키로 암호화.|String|
+|chk_cd|O|확인 코드 값 ((pid + md_user_nm + appKye) String을 SHA256 암호화한 값 - 암호화 예시 참조)<br />매체앱의 앱키로 암호화.|String|
 
 
 ```
