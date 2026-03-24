@@ -58,7 +58,7 @@ public class EncryptTest {
 ```json
 {
     "ret_cd" : "S",
-    "seq_id" : "SUCCESS"
+    "ret_msg" : "SUCCESS"
 }
 ```
 
